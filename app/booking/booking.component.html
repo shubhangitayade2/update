@@ -1,0 +1,99 @@
+<br><br><br><br><br><br><div class="py-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card rounded-0">
+                <div class="Card-header">
+                    <h3 class="mb-0">Please complete the form (*)
+
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div class="form">
+                        <div class="col-md-12">
+
+
+    <table>
+      <tr>
+          <td>Full Name</td>
+          <td>
+              <input [(ngModel)]="bookingModel.name" type="text">
+          </td>
+      </tr>
+      <tr>
+          <td>Email ID</td>
+          <td>
+              <input [(ngModel)]="bookingModel.email" type="text">
+          </td>
+      </tr>
+      <tr>
+        <td>Gender</td>
+        <td>
+          
+            <select
+            id="from"
+            name="from"
+            class="form-control departsfrom-select"
+            [(ngModel)]="bookingModel.gender"
+            required
+          >
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+            
+            
+          </select>
+    
+
+        
+         
+        </td>
+      </tr>
+      <tr>
+        <td>Age</td>
+        <td>
+            <input [(ngModel)]="bookingModel.age" type="text">
+        </td>
+    </tr> 
+      <tr>
+        <td>Meal</td>
+        <td>
+          
+            <select
+            id="from"
+            name="from"
+            class="form-control departsfrom-select"
+            [(ngModel)]="bookingModel.meal"
+            required
+          >
+            <option value="Veg">Veg</option>
+            <option value="NonVeg">NonVeg</option>
+            <option value="Vegan">Vegan</option>
+            <option value="None">None</option>
+            
+          </select>
+    
+
+        
+         
+        </td>
+      </tr>
+      <tr>
+      <td>No. of Seats</td>
+      <td>
+          <input [(ngModel)]="bookingModel.seatNo" type="text">
+      </td>
+  </tr> 
+      <input type="submit" (click)="Addbooking()"class="btn btn-primary"><br>
+      <td><button routerLink="/payment" class="btn btn-primary float-right mt-5">Pay Now</button></td>
+      
+
+      
+  
+    </table>
+  
+  
+</div>
+</div>
+</div>
+</div>
+</div>

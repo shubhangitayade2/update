@@ -1,0 +1,45 @@
+<br><br><br><br><br>
+<input type="button" (click)="getData()" value="Customer Bookings"/>
+<br><br>
+<section class="intro">
+    <div class="gradient-custom-1 h-100">
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="table-responsive bg-white">
+                <table class="table mb-0">
+                  <thead>
+                    <tr>
+        <td>Name </td>
+        <td>Email Id </td>
+        <td>Gender</td>
+        <td>Age</td>
+        <td>Meal</td>
+        <td>Seat No</td>
+        
+    </tr>
+</thead>
+<tbody>
+  
+    <tr *ngFor="let booking of bookingModels">
+        <td> {{booking.name}} </td>
+        <td> {{booking.email}} </td>
+        <td> {{booking.gender}} </td>
+        <td> {{booking.age}} </td>
+        <td> {{booking.meal}} </td>
+        <td> {{booking.seatNo}} </td>
+        
+       
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+           
+<br><br><br><br><br>

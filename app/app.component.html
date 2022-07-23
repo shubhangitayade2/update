@@ -1,0 +1,61 @@
+<div class="shadow p-1 mb-5 bg-white rounded">
+  <nav class="navbar navbar-light" style="background-color: #ffffff;">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/home">
+        <img src="https://flightbooking.blob.core.windows.net/image/download.jpg"
+          class="me-2" height="100" alt="" loading="lazy" />
+        <small>SKY WAYS</small>
+      </a>
+
+      <div class="col-md-8" style="width: 39.8rem;">
+
+        <div class="search" style="width: 40rem;">
+          <i class="fa fa-search"></i>
+          <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="Search for products, brands and more...">
+          <button class="btn btn-primary">Search</button>
+        </div>
+      </div>
+
+
+      <nav class="navbar navbar-light" style="background-color: #ffffff;">
+        <div class="container-fluid">
+          <a class="navbar-brand"  routerLink="/cart">
+            <img src="https://flightbooking.blob.core.windows.net/image/th.jpg" class="me-2" height="88" alt=""
+              loading="lazy" />
+
+          </a>
+        </div>
+      </nav>
+    </div>
+  </nav>
+
+
+  <nav class="navbar navbar-expand-lg mb-0" style="background-color: #fef7f7;">
+    <div class="container-fluid">
+      <a class="btn btn-outline-success mx-1" routerLink="/home">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="btn btn-outline-success mx-1" *ngIf="LoggedIn(false)" routerLink="/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-outline-success mx-1" *ngIf="LoggedIn(false)" routerLink="/register">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-outline-success mx-1"  *ngIf="LoggedIn(true)" routerLink="/account">My Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-outline-success mx-1"  *ngIf="LoggedIn(true)" (click)="LogOut()">Logout</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+</div>
+
+<router-outlet></router-outlet>

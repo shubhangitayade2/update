@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form action="/home">
+  
+ 
+  
+<table>
+  <tr>
+        <td>Enter AirLine Name</td>
+        
+ </tr>
+   
+    
+
+
+<input type="text" class="form-control" [(ngModel)]="searchTerm"(keyup)="search($event)" placeholder="Search">
+</table>
+</form></body></html>
+
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let flight of flights | filter:searchKey:'airline'">
+            
+            <div class="card col-md-3">
+                
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{flight.flightNo}}</h5>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{flight.airline}}</p>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{flight.fromPlace}}</p>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{flight.toPlace}}</p>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;"><strong>Date:{{flight.startDateTime}}</strong></p>
+                <p><strong>Price: ${{flight.ticketCost}}</strong></p>
+                <button class="btn btn-primary" (click)="goto()">Book</button>
+                
+            </div>
+        </ng-container>
+    
+
+    </div>
+</div>

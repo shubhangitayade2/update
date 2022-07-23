@@ -1,0 +1,45 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+<body>
+<form action="/home">
+    <div class="py-5">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card rounded-0">
+                    <div class="Card-header">
+                        <h3 class="mb-0">Search Flights</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="form">
+                            <div class="col-md-12">
+  <input type="radio" id="One Way" name="fav_language" value="One Way">
+  <label for="One Way">One Way</label>
+  <input type="radio" id="Round Trip" name="fav_language" value="Round Rrip">
+  <label for="Round Trip">Round Trip</label><br>
+<input type="text" class="form-control" [(ngModel)]="searchTerm"(keyup)="search($event)" placeholder="Search Flights by Source">
+                            </div></div></div></div></div></div>
+<div class="row mt-5">
+    <div class="row">
+        <ng-container *ngFor="let flight of flights | filter:searchKey:'fromPlace'">
+            
+            <div class="card col-md-3">
+                <img class="card-img-top" src="../../assets/{{flight.logo}}" alt="Card image cap">
+                
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;"><strong>Flight No:{{flight.flightNo}}</strong></h5>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;"><strong>Airline:{{flight.airline}}</strong></p>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;"><strong>Departure:{{flight.fromPlace}}</strong></p>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;"><strong>Arrival:{{flight.toPlace}}</strong></p>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;"><strong>Date:{{flight.startDateTime}}</strong></p>
+                <p><strong>Price: ${{flight.ticketCost}}</strong></p>
+                <button class="btn btn-primary" (click)="goto()">Book</button>
+                
+            </div>
+        </ng-container>
+    
+
+    </div>
+</div>
